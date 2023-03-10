@@ -58,6 +58,16 @@ select *
 from EMPLOYEES
 where FIRST_NAME like '_u%';
 
+--find me minimum salary
+select min(SALARY) from EMPLOYEES;
 
+--find me max salary
+select max(SALARY) from EMPLOYEES;
+
+--find me avg salary
+select avg(SALARY) from EMPLOYEES;
+
+--round(yuvarlar sayıyı. ,2 yaparsan , den sonra 2 basamak bırakacak şekilde olur)
+select round(avg(SALARY),2) from EMPLOYEES;
 
 

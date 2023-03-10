@@ -22,6 +22,8 @@ select count(distinct FIRST_NAME) from EMPLOYEES;
 --Order
 --desc 9-0 Z-A
 --asc 0-9 A-Z
+--default order is asc(ascending order)
+--Note: default order type is asc if you dont specify after column name
 
 -- get me all employees information based on who is making more salary to low salary
 select * from EMPLOYEES
@@ -30,3 +32,24 @@ order by SALARY desc;
 -- get me all emp info order by alphabetical based on firstname
 select * from EMPLOYEES
 order by FIRST_NAME asc;
+
+
+
+--get me all employees whose first name starts with C
+--C% : % means not important the other characters
+select *
+from EMPLOYEES
+where FIRST_NAME like 'C%';
+
+--underscore represents only one character C____ (5 letter first ch is C)
+select *
+from EMPLOYEES
+where FIRST_NAME like 'C____';
+
+--get me 5 letter first names where the middle char iz z;
+select *
+from EMPLOYEES
+where FIRST_NAME like '__z__';
+
+-- if we say %z__ :it can be anything before z
+

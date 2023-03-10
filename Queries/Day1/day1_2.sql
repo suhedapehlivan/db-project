@@ -2,4 +2,4 @@
 
 select FIRST_NAME,LAST_NAME,PHONE_NUMBER
 from EMPLOYEES
-where FIRST_NAME='David';
+where FIRST_NAME='David' and LAST_NAME='Lee';

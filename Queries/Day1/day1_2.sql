@@ -18,3 +18,13 @@ where SALARY< 4000;
 --get me all info who is working as IT_PROG or SA_REP
 select * from EMPLOYEES
 where JOB_ID='IT_PROG' or JOB_ID='SA_REP';
+
+
+--get me first_name, last_name salary who is making more than 5000 and less than 10000
+select FIRST_NAME,LAST_NAME,SALARY
+from EMPLOYEES
+where SALARY>=5000 and SALARY<=10000;
+
+select FIRST_NAME,LAST_NAME,SALARY
+from EMPLOYEES
+where SALARY between 5000 and 10000;

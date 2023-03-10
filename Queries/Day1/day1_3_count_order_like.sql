@@ -53,3 +53,11 @@ where FIRST_NAME like '__z__';
 
 -- if we say %z__ :it can be anything before z
 
+--get me first name where second char is u
+select *
+from EMPLOYEES
+where FIRST_NAME like '_u%';
+
+
+
+

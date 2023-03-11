@@ -66,8 +66,72 @@ where SALARY= 24000;
 select *
 from EMPLOYEES
 where SALARY= (select max(SALARY) from EMPLOYEES);
+
+  So we use first query as an inner query and it will be executed first,
+  then the result will be used in outer query.
  */
 
 
 ----------------
 
+select * from EMPLOYEES;
+
+
+select *
+from EMPLOYEES
+where ROWNUM <11; --shows first 10 in list
+
+
+select * from EMPLOYEES
+order by SALARY desc ;
+
+
+
+
+--get the first 10 people then order them high to low based on salary
+select *
+from EMPLOYEES
+where ROWNUM <11
+order by SALARY desc;
+
+--list the employees who is making top 10 salary
+--order all employees based on salary high to low then display only first 10 result
+--(first order (rank the results), then select top10)
+
+select *
+from (select * from EMPLOYEES
+      order by SALARY desc)
+where ROWNUM <11;
+
+
+
+/*
+ ROWNUM
+ Limits the number of result displayed in the query.
+
+ select *
+from EMPLOYEES
+where ROWNUM <11;
+
+ If we want to use order by first then row number,
+ we need to order table first based on our needs(salary high to low)
+ then use that query result as a table to get number of rows.
+
+ --order all employees based on salary high to low then display only first 10 result
+
+select *
+from (select * from EMPLOYEES
+      order by SALARY desc)
+where ROWNUM <11;
+
+
+ For other databases like postgresql, mysql
+ the keyword is LIMIT and it comes after all clauses
+
+ select *
+from EMPLOYEES
+where ROWNUM <11
+order by SALARY desc
+ limit 10;
+ but limit doesnt work in here
+ */

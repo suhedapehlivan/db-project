@@ -47,3 +47,6 @@ TRUNCATE TABLE  agileteam;
 
 --if we want to delete the table and data together
 DROP TABLE agileteam;
+
+
+

@@ -74,3 +74,6 @@ select * from SCRUMTEAM;
 --saving changes
 commit;
 --when you change sth from tables database, you should commit
+
+
+

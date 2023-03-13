@@ -33,11 +33,55 @@ select * from customer;
 select * from address;
 
 
---to join two tables with connection common column
+--to join two tables with connection common(matching) column
+-- if you have value matching in both sides, you gonna display that matching result it is called: inner join
 --join(table)  on(condition)
+-- you can write join, it means inner join (default)
 select first_name,last_name,address,phone
 from customer join address
 on customer.address_id = address.address_id;
+
+--if you add column which is inside both table, you should specify like customer.address_id or address.address_id
+select first_name,last_name,customer.address_id,address,phone
+from customer join address
+on customer.address_id = address.address_id;
+
+--to write the same syntax with shortcut use the first letter
+select first_name,last_name,c.address_id,address,phone
+from customer c join address a
+on c.address_id = a.address_id;
+
+
+
+
+--LEFT OUTER JOIN
+--gets the whole left table( with matching part)
+--sadece ortak olan satırlar değil, left table daki tüm satırlar da gelecek
+-- in syntax you just add -> left join (left outer join)
+select first_name,last_name,c.address_id,address,phone
+from customer c left join address a
+on c.address_id = a.address_id;
+
+
+
+--RIGHT OUTER JOIN
+--gets the whole right table( with matching part)
+--sadece ortak olan satırlar değil, right table daki tüm satırlar da gelecek
+-- in syntax you just add -> right join (right outer join)
+select first_name,last_name,c.address_id,a.address_id,address,phone
+from customer c right join address a
+on c.address_id = a.address_id;
+
+
+--FULL OUTER JOIN
+--it will display all of them, common ones count once
+select first_name,last_name,c.address_id,a.address_id,address,phone
+from customer c full join address a
+on c.address_id = a.address_id;
+
+
+
+
 
 
 
